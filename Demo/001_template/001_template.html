@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>OpenLayers模板</title>
+    <comment>
+        简单的地图使用<br/>
+    </comment>
+    <!---导入CSS文件 -->
+    <link rel="stylesheet" href="001_template.css">
+</head>
+<body onload="init()">
+
+<!-- 地方的放大与缩小按钮-->
+<a class="zoom" href="javascript: void map.zoomIn();" accesskey="i">
+放大
+</a>
+<a class="zoom" href="javascript:void map.zoomOut();">
+    缩小
+</a>
+
+<!-- 键盘事件-->
+<table>
+    <tbody>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <!-- pan(),将地图向给定的像素移动-->
+                <a href="javascript:void map.pan(0,-map.getSize().h /4)" accesskey="n">北</a>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <a href="javascript:void map.pan(-map.getSize().w / 4,0)" accesskey="w">西</a>
+            </td>
+
+            <td>
+                <!-- 展示地图的div-->
+                <div id="map"></div>
+            </td>
+
+            <td>
+                <a href="javascript:void map.pan(map.getSize().w / 4, 0)" accesskey="w">东</a>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <a href="javascript:void map.pan(0, map.getSize().h / 4)" accesskey="s">南</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- 引入OpenLayers库-->
+<script type="text/javascript" src="../../Common/OpenLayers/OpenLayers.js"></script>
+<!-- 引入自定义的JS-->
+<script type="text/javascript" src="001_template.js"></script>
+</body>
+</html>
